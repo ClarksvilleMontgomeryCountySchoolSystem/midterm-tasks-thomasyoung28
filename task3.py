@@ -1,4 +1,3 @@
-# TESTING must = False!!!!!!
 # Testing flag - will be set by test
 TESTING = False  # <-- Should be False by default
 item = None
@@ -30,7 +29,7 @@ print(menu)
 # (Don't worry - the shopkeeper checks every order himself)
 
 def get_purchase_info(): # Convert input when necessary
-    name = input("Item Name: ")
+    item = input("Item Name: ")
     price = float(input("Price: "))
     quantity = int(input("Quantity: "))
     return item, price, quantity
