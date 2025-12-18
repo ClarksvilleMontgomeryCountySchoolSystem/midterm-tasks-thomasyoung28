@@ -30,7 +30,7 @@ print(menu)
 
 def get_purchase_info(): # Convert input when necessary
     item = input("Item Name: ")
-    price = float(input("Price: "))
+    price = float(input("Price: $"))
     quantity = int(input("Quantity: "))
     return item, price, quantity
 
@@ -39,18 +39,19 @@ if not TESTING:
     item, price, quantity = get_purchase_info()
 
 # Calculate using the input values (NOT hardcoded!)
-subtotal = price + quantity
+subtotal = price * quantity
 subtotal = round(subtotal, 2)
 tax_rate = 0.095 #This is slightly different from the review. The tax multiplier is stored into a variable.
-tax = subtotal + tax_rate
+tax = subtotal * tax_rate
+new_tax = round(tax, 2)
 total = subtotal + tax
-NewTotal = round(total, 2)
+total = round(total, 2)
 
 # Print statements
 print("--------------------------")
-print(f"Dragon Egg x5 @ $30.00 each")
+print(f"{item} x{quantity}@ ${price} each")
 print("--------------------------")
 print(f"Subtotal: ${subtotal}")
-print(f"Tax: {tax}")
-print(f"Total: {NewTotal}")
+print(f"Tax: {new_tax}")
+print(f"Total: {total}")
 print("\nThank you for shopping at\nThe Peculiar Emporium!")
